@@ -21,11 +21,14 @@
 	<!-- START HERE --> 
 		<img src="images/gg_logo.png">
 
-		<h1>Website zum Zählen von Gästen</h1>
-		<h2>Die Links unten führen zu den einzelnen Seiten, die die Besucherzahl mitzählen.</h2>
-		
-		<a href="./erwachsene.html">Erwachsene <script>let count = localStorage.getItem('count');document.write(`${count}`);</script></a>
-		<a href="./schuler.html">Schüler und Studenten <script>let count_s = localStorage.getItem('count_s');document.write(`${count_s}`);</script></a>
+		<h1>Diese Karte ist für einen Schüler oder Studenten gültig.</h1>
+		<h2>
+			<script>
+	    		let count_s = localStorage.getItem('count_s') || 0;
+	    		localStorage.setItem('count_s', ++count_s);
+	    		document.write(`Dies ist der ${count_s}. Schüler oder Student.`);
+			</script>
+		</h2>
 
 	<!-- END HERE --> 
 	</div><!-- #container --> 

@@ -14,6 +14,7 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com"> 
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 		<link href="https://fonts.googleapis.com/css2?family=Domine&family=Montserrat:ital,wght@0,200;1,200&family=Tenor+Sans&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -21,14 +22,19 @@
 	<!-- START HERE --> 
 		<img src="images/gg_logo.png">
 
-		<h1>Website zum Zählen von Gästen</h1>
-		<h2>Die Links unten führen zu den einzelnen Seiten, die die Besucherzahl mitzählen.</h2>
+		<h1>Diese Karte ist für einen Erwachsenen gültig.</h1>
+		<h2>
+			<script>
+	    		let count = localStorage.getItem('count') || 0;
+	    		localStorage.setItem('count', ++count);
+	    		document.write(`Dies ist der ${count}. Erwachsene.`);
+			</script>
+		</h2>
 		
-		<a href="./erwachsene.html">Erwachsene <script>let count = localStorage.getItem('count');document.write(`${count}`);</script></a>
-		<a href="./schuler.html">Schüler und Studenten <script>let count_s = localStorage.getItem('count_s');document.write(`${count_s}`);</script></a>
 
 	<!-- END HERE --> 
 	</div><!-- #container --> 
+	
 </body>
 </html>
 
