@@ -14,6 +14,15 @@
 		<link rel="preconnect" href="https://fonts.googleapis.com"> 
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
 		<link href="https://fonts.googleapis.com/css2?family=Domine&family=Montserrat:ital,wght@0,200;1,200&family=Tenor+Sans&display=swap" rel="stylesheet">
+		<script>
+			function reset() {
+				localStorage.getItem('count_e')
+				localStorage.setItem('count_e', count_e-count_e);
+				localStorage.getItem('count_s')
+				localStorage.setItem('count_s', count_s-count_s);
+				window.location.reload()
+			}
+		</script>
 </head>
 
 <body>
@@ -22,10 +31,11 @@
 		<img src="images/gg_logo.png">
 
 		<h1>Website zum Zählen von Gästen</h1>
-		<h2>Die Links unten führen zu den einzelnen Seiten, die die Besucherzahl mitzählen.</h2>
+		<h2>Die Links unten führen zu den einzelnen Seiten, die die Besucherzahl mitzählen. Insgesammt <script>var sum = parseInt(localStorage.getItem('count_e')) + parseInt(localStorage.getItem('count_s')); document.write(sum);</script> Besucher.</h2>
 		
-		<a href="./erwachsene.html">Erwachsene <script>let count = localStorage.getItem('count');document.write(`${count}`);</script></a>
+		<a href="./erwachsene.html">Erwachsene <script>let count_e = localStorage.getItem('count_e');document.write(`${count_e}`);</script></a>
 		<a href="./schuler.html">Schüler und Studenten <script>let count_s = localStorage.getItem('count_s');document.write(`${count_s}`);</script></a>
+		<button onclick="reset()">Zurücksetzen</button>
 
 	<!-- END HERE --> 
 	</div><!-- #container --> 
